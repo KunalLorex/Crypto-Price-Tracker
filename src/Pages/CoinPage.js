@@ -127,6 +127,24 @@ const CoinPage = () => {
                 coin?.market_data.current_price[currency.toLowerCase()]
               )}
             </Typography>
+            
+          </span>
+          <span style={{ display: "flex" }}>
+            <Typography variant="h5" className={classes.heading}>
+              Predicted Price:
+            </Typography>
+            &nbsp; &nbsp;
+            <Typography
+              variant="h5"
+              style={{
+                fontFamily: "Montserrat",
+              }}
+            >
+              {symbol}{" "}
+              {numberWithCommas(
+                coin?.market_data.current_price[currency.toLowerCase()]
+              )}
+            </Typography>
           </span>
           <span style={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading}>
