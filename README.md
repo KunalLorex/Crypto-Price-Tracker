@@ -1,13 +1,13 @@
 # crypto-tracker
 ## TO-DO :
-AUTHENTICATION (EMAIL AUTHENTICATION BY KUNAL LOREX)
-Logo Update / Name Change
-Prediction page front-end
-Fetching data in csv file
-Data updation in Prediction page
-UI IMPROVEMENT
-Authentictaion ( Metamask)
-Watchlist (Low priority)
-User will predict the data (Low priority)
+1.AUTHENTICATION (EMAIL AUTHENTICATION BY KUNAL LOREX)
+2.Logo Update / Name Change
+3.Prediction page front-end
+4.Fetching data in csv file
+5.Data updation in Prediction page
+6.UI IMPROVEMENT
+7.Authentictaion ( Metamask)
+8.Watchlist (Low priority)
+9.User will predict the data (Low priority)
 ## IMP RESOURCES:
-https://blog.coingecko.com/import-coingecko-cryptocurrency-data-into-microsoft-excel/( UPDATING DATA FROM API TO CSV) https://www.coingecko.com/en/api/documentation (## API CALLING OF COINS)
+1.https://blog.coingecko.com/import-coingecko-cryptocurrency-data-into-microsoft-excel/( UPDATING DATA FROM API TO CSV) 2.https://www.coingecko.com/en/api/documentation (## API CALLING OF COINS)
