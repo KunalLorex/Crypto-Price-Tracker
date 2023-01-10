@@ -17,7 +17,7 @@ const CoinInfo = ({ coin }) => {
   const [days, setDays] = useState(1);
   const { currency } = CryptoState();
   const [flag,setflag] = useState(false);
-
+  
   const useStyles = makeStyles((theme) => ({
     container: {
       width: "75%",
@@ -43,8 +43,13 @@ const CoinInfo = ({ coin }) => {
     setflag(true);
     setHistoricData(data.prices);
   };
-
+  
   console.log(coin);
+  function handleClick(){
+    let callingStorage = JSON.parse(localStorage.getItem("jadoogar"))
+    console.log("feetching localstorage data ->>>>>>>>",callingStorage)
+    
+  }
 
   useEffect(() => {
     fetchHistoricData();
@@ -59,15 +64,19 @@ const CoinInfo = ({ coin }) => {
       type: "dark",
     },
   });
+  let jsonString = JSON.stringify(historicData)
+  localStorage.setItem("jadoogar",jsonString)
+  
 
+  let pushedArr=[];
   return (
     <ThemeProvider theme={darkTheme}>
       <div className={classes.container}>
         {!historicData | flag===false ? (
           <CircularProgress
-            style={{ color: "gold" }}
-            size={250}
-            thickness={1}
+          style={{ color: "gold" }}
+          size={250}
+          thickness={1}
           />
         ) : (
           <>
@@ -75,13 +84,15 @@ const CoinInfo = ({ coin }) => {
               data={{
                 labels: historicData.map((coin) => {
                   let date = new Date(coin[0]);
+                  pushedArr.push({"date":coin[0],"price":coin[1]})
+                  console.log(pushedArr);
                   let time =
-                    date.getHours() > 12
-                      ? `${date.getHours() - 12}:${date.getMinutes()} PM`
-                      : `${date.getHours()}:${date.getMinutes()} AM`;
+                  date.getHours() > 12
+                  ? `${date.getHours() - 12}:${date.getMinutes()} PM`
+                  : `${date.getHours()}:${date.getMinutes()} AM`;
                   return days === 1 ? time : date.toLocaleDateString();
                 }),
-
+                
                 datasets: [
                   {
                     data: historicData.map((coin) => coin[1]),
@@ -148,8 +159,12 @@ const CoinInfo = ({ coin }) => {
           </>
         )}
       </div>
+      <div>
+        <button onClick={handleClick}>checek</button>
+      </div>
     </ThemeProvider>
   );
+
 };
 
 export default CoinInfo;
